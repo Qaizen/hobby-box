@@ -5,4 +5,4 @@ bryson
 =======
 ## John's change
 
-git 
+### Changed the ignore file
