@@ -6,7 +6,7 @@ const userRoutes = require('./user-routes');
 const subRoutes = require('./subscription-routes');
 // const session = require('./session-routes');
 
-router.use('/hobbyBox', hobbyBoxRoutes);
+router.use('/hobbybox', hobbyBoxRoutes);
 router.use('/user', userRoutes);
 router.use('/subscription', subRoutes);
 // router.use('/session', session);
