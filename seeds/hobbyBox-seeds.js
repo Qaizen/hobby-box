@@ -21,6 +21,6 @@ const HobbyBoxData = [
   },
 ];
 
-const seedHobbyBox = () => HobbyBox.bulkCreate(hobbyBoxData);
+const seedHobbyBox = () => HobbyBox.bulkCreate(HobbyBoxData);
 
 module.exports = seedHobbyBox;

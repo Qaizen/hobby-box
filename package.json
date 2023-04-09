@@ -1,4 +1,11 @@
-{
+{"scripts": {
+  "test": "jest",
+  "start": "node server.js",
+  "seed": "node seeds/index.js",
+  "start:dev": "nodemon server.js"
+},
+
+
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",

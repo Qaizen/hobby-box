@@ -31,7 +31,7 @@ Subscriptions.init(
         key: 'id'
       }
     },
-    user_id: {
+    users_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
