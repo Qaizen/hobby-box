@@ -1,28 +1,30 @@
 //import models
-const {Users, Subscription, HobbyBox  } = require('../models');
+const HobbyBox = require('./HobbyBox');
+const Users = require('./Users');
+const Subscriptions = require('./Subscriptions');
 
 //Users has many subscriptions
-Users.hasMany(Subscription, {
+Users.hasMany(Subscriptions, {
   foreignKey: 'user_id'
 });
 
-//Subscription belongs to a Users
-Subscription.belongsTo(Users, {
+//Subscriptions belongs to a Users
+Subscriptions.belongsTo(Users, {
   foreignKey: 'user_id'
 });
 
-//Subscription has many hobby boxes
-Subscription.hasMany(HobbyBox, {
-  foreignKey: 'sub_id'
+//Subscriptions has many hobby boxes
+Subscriptions.hasMany(HobbyBox, {
+  foreignKey: 'hobbybox_id'
 });
 
-// HobbyTracker.belongsTo(Subscription, {
+// HobbyTracker.belongsTo(Subscriptions, {
 //   foreignKey: 'sub_id'
 // });
 
 //Hobby box has many users
 HobbyBox.hasMany(Users, {
-  foreignKey: 'hobby_id'
+  foreignKey: 'hobbybox_id'
 });
 
 // HobbyTracker.belongsTo(HobbyBox, {
@@ -31,4 +33,4 @@ HobbyBox.hasMany(Users, {
 
 
 
-module.exports = { Users, Subscription, HobbyBox, HobbyTracker};
+module.exports = { Users, Subscriptions, HobbyBox };
