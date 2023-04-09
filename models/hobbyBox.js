@@ -1,8 +1,12 @@
+// import important parts of sequelize library
 const { Model, DataTypes } = require("sequelize");
+// import our database connection from config.js
 const sequelize = require("../config/connection");
 
+// Initialize Product model (table) by extending off Sequelize's Model class
 class HobbyBox extends Model {}
 
+// set up fields and rules for hobby Box model
 HobbyBox.init(
     {
     // define columns
@@ -17,7 +21,21 @@ HobbyBox.init(
             allowNull: false,
             required: true,
         },
-        hobby
+        price: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
+            validate: {
+              isDecimal: true,
+            },
+          },
+          stock: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 10,
+            validate: {
+              isNumeric: true,
+            },
+        }
     },
     {
         sequelize,
@@ -25,7 +43,8 @@ HobbyBox.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'hobbyBox',
-    }
+    },
+
 );
 
 module.exports = HobbyBox;
