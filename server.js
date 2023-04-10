@@ -1,30 +1,33 @@
 
-/*PLEASE NOTE:  this code has been copied from:
+/*PLEASE NOTE: most of this code has been copied from:
         module 14, activity #28 (mini project)
-
-IT MAY NEED MODIFICATION TO WORK (     more/less require() needed?     )
-
-I believe this or similar code is what will work for our case
-HOWEVER, I've compared it to 2 other projects and it is nearly identical,
-so I believe it should work as is
 */
 
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const exphbs = require('express-handlebars');
+
+// temp using without custom helpers   below the next line will be the proper code to use
+const hbs = exphbs.create({});
+// Set up Handlebars.js engine with custom helpers
+// const hbs = exphbs.create({ helpers });
+
 
 // const helpers = require('./utils/helpers');
+
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Set up Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
-// const hbs = exphbs.create({ helpers });
+// temporarily using 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 const sess = {
   secret: 'Super secret secret',
