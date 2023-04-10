@@ -3,7 +3,7 @@ const { HobbyBox, Subscriptions, Users } = require("../../models");
 
 // The `/api/hobbyBox` endpoint
 // get all hobby boxes
-router.get("/", (req, res) => {
+router.get("/",  async (req, res) => {
   HobbyBox.findAll({
     include: [
       {
