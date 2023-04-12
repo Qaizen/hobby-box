@@ -1,173 +1,50 @@
-/* style for css
-this is all temp css from mod 14 activity 2 */
-
-:root {
-  --primary: #41436a;
-  --secondary: #984063;
-  --tertiary: #f64668;
-  --quatrinary: #fe9677;
-  --light: #ebebeb;
-  --dark: #182c23;
-  --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
+ul.navbar-nav.col-12.justify-content-end {
+    background-color: transparent;
+    margin-left: -3.9px;
 }
 
-body {
-  font-family: Arial;
+a.navbar-brand {
+  background-color: transparent;
+}
+
+body.d-flex.flex-column.min-vh-100 {
+  height: 100vh;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: flex-start;
-  background-color: var(--quatrinary);
+  font-family: 'Open Sans', sans-serif;
+  background: #222;
+  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  font-size: 120%;    
 }
 
-header {
-  padding: 40px;
-  text-align: center;
-  background: var(--primary);
-  color: var(--secondary);
-  border-bottom-style: solid;
-}
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-}
-
-aside {
-  flex: 0;
-  background-color: var(--tertiary);
-  padding: 80px;
-  text-align: left;
-  color: var(--light);
-}
-
-nav {
-  display: flex;
-  background-color: var(--secondary);
-}
-
-.menu-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 75%;
-  min-height: 100%;
-  margin: 0px auto;
-  border: 3px solid var(--primary);
-  border-radius: var(--border-radius);
-  border-style: solid;
-  border-width: medium;
-  background-color: var(--light);
-  color: var(--dark);
-  padding: 50px;
-  background-color: #ebebeb;
-}
-
-.hobbyImage {
-  display:flex;
+.card {
+  background-color: transparent;
+  border: none;
   
 }
 
-.add-dish-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 35%;
-  min-height: 100%;
-  min-width: 35%;
-  margin: 5px auto;
-  border: 3px solid var(--primary);
-  border-radius: var(--border-radius);
-  border-style: solid;
-  border-width: medium;
-  background-color: var(--light);
-  color: var(--dark);
-  padding: 50px;
-  text-align: center;
-  background-color: var(--tertiary);
+.card .card-body {
+  padding: 0;
+  margin-left: 18px;
+  color: white;
+  font-weight: bolder;
 }
 
-.edit-dish-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 35%;
-  min-height: 100%;
-  min-width: 35%;
-  margin: 5px auto;
-  border: 3px solid var(--primary);
-  border-radius: var(--border-radius);
-  border-style: solid;
-  border-width: medium;
-  background-color: var(--light);
-  color: var(--dark);
-  padding: 50px;
-  text-align: center;
-  background-color: var(--tertiary);
+a.navbar-brand {
+  color: white;
+  font-weight: 900;
+  font-size: xxx-large;
 }
 
-/* CARDS */
-.dish-card {
-  margin: 20px;
-  flex: 0 1 300px;
-  padding: 5px;
-  width: 35%;
-  min-height: 100%;
-  min-width: 35%;
-  border: 3px solid var(--primary);
-  border-radius: var(--border-radius);
-  border-style: solid;
-  border-width: medium;
-  background-color: var(--light);
-  color: var(--dark);
+a.nav-link, h5.text-uppercase, p.email {
+  color: white;
+  font-weight: bolder;
+  font-weight: 900;
 }
 
-.menu-card {
-  margin: 50px;
-  flex: 0 1 300px;
-  padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: groove;
-  border-width: thick;
-  background-color: var(--light);
-  color: var(--dark);
-}
-
-.card-header {
-  color: var(--light);
-  margin: 0;
-  background-color: var(--secondary);
-  padding: 0.625rem;
-  border: 3px solid var(--primary);
-  border-radius: var(--border-radius);
-  border-style: solid;
-  border-width: medium;
-}
-
-.has-nuts {
-  color: var(--error)
-}
-
-.dish-card-header {
-  font-size: 1.5rem;
-  color: var(--tertiary);
-  margin: 0;
-  background-color: var(--light);
-  padding: 0.625rem;
-  border-bottom-style: solid;
-}
-
-.card-body {
-  padding: 2.5%;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-/* LAYOUT */
-.container {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: flex-start;
-  align-items: center;
+footer.bg-transparent.text-center.text-lg-start.mt-auto {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

@@ -1,41 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Potluck Party</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body class="flex-column justify-space-around">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Welcome to Hobby-box</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse row" id="navbarNav">
-        <ul class="navbar-nav">
-          {{#if loggedIn}}
-          <li class="nav-item text-end">
-            <a class="nav-link" id="logout" href="/">Logout</a>
-          </li>
-          {{else}}
-          <li class="nav-item text-end">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item text-end">
-            <a class="nav-link" href="/signup">Sign up</a>
-          </li>
-          {{/if}}
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <main class="container container-fluid mt-5">
-    <img src="/public/images/Screenshot (100).png" alt="congregate">
-    {{{ body }}}
-  </main>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-toggleable-md navbar-expand-sm bg-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hobby-Box</a>
+            <div class="collapse navbar-collapse row" id="navbarNav">
+                <ul class="navbar-nav col-12 justify-content-end">
+                {{#if loggedIn}}
+                    <li class="nav-item text-end">
+                    <a class="nav-link" id="logout" href="/">Logout</a>
+                    </li>
+
+                    {{else}}
+                    <li class="nav-item text-end">
+                    <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item text-end">
+                    <a class="nav-link" href="/signup">Sign Up</a>
+                    </li>
+                {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class=>
+        {{{ body }}}
+        </div>
+    <footer class="bg-transparent text-center text-lg-start mt-auto">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Contact Us</h5>
+
+                <p class="email">
+                Email: admin@hobby-box.com
+                </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Want to add a new hobby?</h5>
+
+                <p class="email">
+                Email your new hobbies to addhobbies@hobby-box.com
+                </p>
+            </div>
+            <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        
+        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+        </div>
+        
+    </footer>
+
+ {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+
 </body>
+
 </html>
