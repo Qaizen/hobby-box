@@ -15,7 +15,7 @@ const hbs = exphbs.create({});
 // const hbs = exphbs.create({ helpers });
 
 
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 
 const sequelize = require('./config/connection');

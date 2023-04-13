@@ -26,15 +26,8 @@ Users.init(
             autoIncrement: true,
           },
       
-          // defines the first_name column
-          first_name: {
-            // defines type of data in the column
-            type: DataTypes.STRING,
-            // does not allow value to be empty
-            allowNull: false,
-          },
-          // defines the last_name column
-          last_name: {
+          // defines the username column
+          username: {
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
@@ -66,34 +59,6 @@ Users.init(
               // checks if password has 1 letter 1 number and 1 special character
              // is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
             },
-          },
-          //  defines the address column
-          address: {
-            // defines type of data in the column
-            type: DataTypes.STRING,
-            // does not allow value to be empty
-            allowNull: false,
-          },
-          // defines the city column
-          city: {
-            // defines type of data in the column
-            type: DataTypes.STRING,
-            // does not allow value to be empty
-            allowNull: false,
-          },
-          // defines the country column
-          state: {
-            // defines type of data in the column
-            type: DataTypes.STRING,
-            // does not allow value to be empty
-            allowNull: false,
-          },
-          // defines the zipcode column
-          zipCode: {
-            // defines type of data in the column
-            type: DataTypes.STRING,
-            // does not allow value to be empty
-            allowNull: false,
           },
         },
         {
