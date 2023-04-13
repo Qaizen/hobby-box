@@ -11,6 +11,7 @@
 // that being, when a user tries to view their account, it will
 // send them to a login page.      Need to discuss at next meeting
 // how exactly we want to use this/make it work
+
 const withAuth = (req, res, next) => {
   if (!req.session.logged_in) {
     res.redirect('/login');

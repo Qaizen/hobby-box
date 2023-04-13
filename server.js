@@ -8,15 +8,12 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
 
 // temp using without custom helpers   below the next line will be the proper code to use
 const hbs = exphbs.create({});
 // Set up Handlebars.js engine with custom helpers
 // const hbs = exphbs.create({ helpers });
-
-
-const helpers = require('./utils/helpers');
-
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
