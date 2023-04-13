@@ -1,5 +1,4 @@
 //used for the loginFormHandler
-
 // refer to module 14 activity 16
 
 // Login form submit handler
@@ -48,7 +47,7 @@ const loginFormHandler = async function(event) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password })
       });
-  
+      console.log('response', response);
       // If the response was successful, redirect to the dashboard
       if (response.ok) {
         document.location.replace('/dashboard');
