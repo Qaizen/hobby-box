@@ -18,8 +18,8 @@ async function loginFormHandler(event) {
     })
     .then(res => {
         console.log(res)
-        document.location.replace('/');
-        alert(res.statusText);
+        document.location.replace('/hobbies');
+        alert("Log In successful!");
     })
     .catch(err => {
       console.log(err)
@@ -28,10 +28,35 @@ async function loginFormHandler(event) {
   }
 }
 // Sign up form submit handler
+async function signupFormHandler(event) {
+  event.preventDefault();
 
+  const userName = document.querySelector('#username-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (userName && email && password) {
+    axios.post('/api/user', {
+      username: userName,
+      email: email,
+      password: password
+    })
+    .then(res => {
+      console.log(res)
+      document.location.replace('/');
+      alert(res.statusText);
+    })
+    .catch(err => {
+      console.log(err)
+      alert('An Error has occurred')
+    })
+  }
+}
 
 // Add event listeners to the login and sign up forms
 if(location.href.includes('login')){
   document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+} else {
+  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 }
 

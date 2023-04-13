@@ -16,11 +16,15 @@ router.get('/', (req, res) => {
   }
 });
 
-//route for signup page      this is where we whill need req.session.loggedIn
-
+//route for signup page
 router.get('/signup', (req, res) => {
-  res.render('signUp')
-})
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  } else {
+  res.render('signUp');
+  }
+});
 
 
 //route for login
@@ -34,25 +38,21 @@ router.get('/login', (req, res) => {
   
 });
 
-//route for sign up
-router.get('/signup', (req, res) => {
-  res.render('signUp')
-})
-
 //route for hobbies page
 // all hobbies we have available here with pics 4-10 ?? idk
 router.get('/hobbies', (req, res) => {
-  res.render('hobbies')
+  if (req.session.loggedIn) {
+    res.render('hobbies')
+    return;
+  } else {
+    res.render('/')
+  }
 })
 
 
 //routes for etc......
 
 // Login route
-
-
-
-
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
