@@ -4,6 +4,7 @@ const usersData = [
   {
     first_name: 'Bill',
     last_name: 'Smith',
+    user_name: 'BSmith',
     email: 'billsmith@mail.com',
     password: 'Password1!',
     address:  '123 Main St',
@@ -14,6 +15,7 @@ const usersData = [
   {
     first_name: 'Joe',
     last_name: 'Mack',
+    user_name: 'JMack',
     email: 'joemack@mail.com',
     password: 'Password1!',
     address:  '123 Richard St',
@@ -24,6 +26,7 @@ const usersData = [
   {
     first_name: 'Lily',
     last_name: 'Rodriguez',
+    user_name: 'lilyr',
     email: 'lilyrodriguez@mail.com',
     password: 'Password1!',
     address:  '123 Poppy St',
@@ -34,6 +37,7 @@ const usersData = [
   {
     first_name: 'Sally',
     last_name: 'Davis',
+    user_name: 'sdavis',
     email: 'sallydavis@mail.com',
     password: 'Password1!',
     address:  '123 Barton St',
@@ -44,6 +48,7 @@ const usersData = [
   {
     first_name: 'Bubba',
     last_name: 'Buck',
+    user_name: 'bbuck',
     email: 'bubbabuck@mail.com',
     password: 'Password1!',
     address:  '123 Some st',
@@ -54,6 +59,7 @@ const usersData = [
   {
     first_name: 'Linda',
     last_name: 'Le',
+    user_name: 'lle',
     email: 'lindale@mail.com',
     password: 'Password1!',
     address:  '123 South St',
@@ -64,6 +70,7 @@ const usersData = [
   {
     first_name: 'Sue',
     last_name: 'Carey',
+    user_name: 'scarey',
     email: 'suecarey@mail.com',
     password: 'Password1!',
     address:  '123 Dallas St',
@@ -74,6 +81,7 @@ const usersData = [
   {
     first_name: 'Mary',
     last_name: 'Jones',
+    user_name: 'mjones',
     email: 'maryjones@mail.com',
     password: 'Password1!',
     address:  '123 Main St',
