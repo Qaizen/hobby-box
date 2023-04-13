@@ -8,15 +8,10 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
 
-// temp using without custom helpers   below the next line will be the proper code to use
-const hbs = exphbs.create({});
 // Set up Handlebars.js engine with custom helpers
-// const hbs = exphbs.create({ helpers });
-
-
-// const helpers = require('./utils/helpers');
-
+const hbs = exphbs.create({ helpers });
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -25,7 +20,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// temporarily using 
+// Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -43,11 +38,6 @@ const sess = {
     db: sequelize
   })
 };
-
-
-// Inform Express.js on which template engine to use
-// app.engine('handlebars', hbs.engine); need this next
-// app.set('view engine', 'handlebars');
 
 app.use(session(sess));
 app.use(express.json());
