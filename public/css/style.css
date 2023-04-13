@@ -36,7 +36,7 @@ a.navbar-brand {
   font-size: xxx-large;
 }
 
-a.nav-link, h5.text-uppercase, p.email {
+a.nav-link, h5.text-uppercase, p.email, h3.h3.text-center, label {
   color: white;
   font-weight: bolder;
   font-weight: 900;
