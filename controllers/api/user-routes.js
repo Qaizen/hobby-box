@@ -52,21 +52,22 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   // create a new tag
   Users.create({
-    first_name: req.body.first_name,
+    //first_name: req.body.first_name,
     // the last_name is the last name of the user
-    last_name: req.body.last_name,
+    //last_name: req.body.last_name,
     // the email is the email of the user
+    user_name: req.body.user_name,
     email: req.body.email,
     // the password is the password of the user
     password: req.body.password,
     // the address is the address the user lives in
-    address: req.body.address,
+    //address: req.body.address,
     // the city is the city the user lives in
-    city: req.body.city,
+    //city: req.body.city,
     // the state is the state the user lives in
-    state: req.body.state,
+    //state: req.body.state,
     // the zip is the zip code of the user
-    zipCode: req.body.zipCode,
+    //zipCode: req.body.zipCode,
   })
     // send the response back to the client
     .then((dbUserData) => {
@@ -75,6 +76,7 @@ router.post("/", (req, res) => {
         // set the session user_id to the user id of the user we just created
         req.session.users = dbUserData.id;
         // set teh session email to the email of the user we just created
+        req.session.user_name = dbUserData.user_name;
         req.session.email = dbUserData.email;
         // the purpose of session.loggedIn is to check if the user is logged in or not
         req.session.loggedIn = true;
