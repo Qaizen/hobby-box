@@ -8,7 +8,7 @@ router.get("/",  async (req, res) => {
     include: [
       {
         model: Users,
-        attributes: ["id", "first_name"],
+        attributes: ["id", "username"],
       },
     ],
   }).then((products) => res.json(products));
@@ -25,7 +25,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Users,
-        attributes: ["id", "first_name"],
+        attributes: ["id", "username"],
       },
     ],
   }).then((product) => res.json(product));

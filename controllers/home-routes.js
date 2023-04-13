@@ -6,7 +6,14 @@ const { Users, HobbyBox, Subscriptions } = require("../models");
 
 //route for homepage   NO AUTH YET
 router.get('/', (req, res) => {
-  res.render('homePage');
+  if (req.session.loggedIn) {
+    res.render('homePage', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  } else {
+    res.render('homePage');
+  }
 });
 
 //route for signup page      this is where we whill need req.session.loggedIn
@@ -18,8 +25,14 @@ router.get('/signup', (req, res) => {
 
 //route for login
 router.get('/login', (req, res) => {
-  res.render('login')
-})
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  } else {
+    res.render('login');
+  }
+  
+});
 
 //route for sign up
 router.get('/signup', (req, res) => {
@@ -34,5 +47,24 @@ router.get('/hobbies', (req, res) => {
 
 
 //routes for etc......
+
+// Login route
+
+
+
+
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+});
+
+
 
 module.exports = router;
