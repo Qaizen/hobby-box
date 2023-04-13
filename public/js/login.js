@@ -20,9 +20,10 @@ const loginFormHandler = async function(event) {
         body: JSON.stringify({ email, password })
       });
   
-      // If the response was successful, redirect to the dashboard
+      // If the response was successful, redirect to hobbies
       if (response.ok) {
-        document.location.replace('/dashboard');
+        console.log('response', response);
+        document.location.replace('/hobbies');
       } else {
         // Otherwise, display an error message to the user
         alert('Incorrect email or password');
@@ -48,10 +49,10 @@ const loginFormHandler = async function(event) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password })
       });
-  
-      // If the response was successful, redirect to the dashboard
+      console.log('response', response);
+      // If the response was successful, redirect to hobbies
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/');
       } else {
         // Otherwise, display an error message to the user
         alert('Something went wrong. Please try again later.');

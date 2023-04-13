@@ -31,14 +31,20 @@ Users.init(
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
-            allowNull: false,
+            allowNull: true,
           },
           // defines the last_name column
           last_name: {
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
-            allowNull: false,
+            allowNull: true,
+          },
+          user_name: {
+            // defines type of data in the column
+            type: DataTypes.STRING,
+            // does not allow value to be empty
+            allowNull: true,
           },
           // defines the email column
           email: {
@@ -72,28 +78,28 @@ Users.init(
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
-            allowNull: false,
+            allowNull: true,
           },
           // defines the city column
           city: {
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
-            allowNull: false,
+            allowNull: true,
           },
           // defines the country column
           state: {
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
-            allowNull: false,
+            allowNull: true,
           },
           // defines the zipcode column
           zipCode: {
             // defines type of data in the column
             type: DataTypes.STRING,
             // does not allow value to be empty
-            allowNull: false,
+            allowNull: true,
           },
         },
         {
