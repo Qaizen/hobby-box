@@ -47,6 +47,25 @@ footer.bg-transparent.text-center.text-lg-start.mt-auto {
   right: 0;
   bottom: 0;
   left: 0;
+  display: contents;
+}
+
+.home-title {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-weight: 900;
+  font-style:oblique;
+  margin-top: 100px;
+}
+
+.description {
+  text-align: center;
+  color: white;
+  font-style: italic;
+  font-weight: lighter;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .hobbies-btn{
