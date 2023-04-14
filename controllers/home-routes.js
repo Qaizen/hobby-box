@@ -42,7 +42,9 @@ router.get('/login', (req, res) => {
 // all hobbies we have available here with pics 4-10 ?? idk
 router.get('/hobbies', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('hobbies')
+    res.render('hobbies', {
+      loggedIn: req.session.loggedIn
+    })
     return;
   } else {
     res.render('/')
