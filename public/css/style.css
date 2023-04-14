@@ -47,6 +47,7 @@ footer.bg-transparent.text-center.text-lg-start.mt-auto {
   right: 0;
   bottom: 0;
   left: 0;
+  display: contents;
 }
 
 .home-title {
@@ -55,7 +56,7 @@ footer.bg-transparent.text-center.text-lg-start.mt-auto {
   font-weight: bolder;
   font-weight: 900;
   font-style:oblique;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .description {
