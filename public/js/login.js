@@ -18,7 +18,7 @@ async function loginFormHandler(event) {
     })
     .then(res => {
         console.log(res)
-        document.location.replace('/hobbies');
+        document.location.replace('/');
         alert("Log In successful!");
     })
     .catch(err => {
@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
     })
     .then(res => {
       console.log(res)
-      document.location.replace('/');
+      document.location.replace('/hobbies');
       alert(res.statusText);
     })
     .catch(err => {

@@ -1,3 +1,7 @@
+
+// DON'T BELIEVE WE NEED THIS FILE
+// KEEPING JUST IN CASE
+
 // import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
 

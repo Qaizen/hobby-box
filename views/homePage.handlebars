@@ -21,3 +21,12 @@
     </div>
   </div>
 </div>
+{{#if loggedIn}}
+  <div class="nav-item text-end">
+    <a class="hobbies-btn" href="/hobbies">Hobbies</a>
+  </div>
+  {{else}}
+  <div class="nav-item text-end">
+    <a class="hobbies-btn" href="/login">Hobbies</a>
+  </div>
+{{/if}}
