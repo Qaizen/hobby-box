@@ -1,89 +1,83 @@
+
 ul.navbar-nav.col-12.justify-content-end {
-    background-color: transparent;
-    margin-left: -3.9px;
-}
-
-a.navbar-brand {
   background-color: transparent;
+  margin-left: -3.9px;
 }
-
+a.navbar-brand {
+background-color: transparent;
+}
 body.d-flex.flex-column.min-vh-100 {
-  height: 100vh;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: #222;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
-  font-size: 120%;    
-  background-position: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+height: 100vh;
+margin: 0;
+font-family: 'Open Sans', sans-serif;
+background-image: url("/images/3.jpg");
+font-size: 120%;    
+background-position: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
 }
-
 
 .card {
-  background-color: transparent;
-  border: none;
-  padding: 1%;
+background-color: transparent;
+border: none;
+padding: 1%;
 }
-
 .card .card-body {
-  padding: 0;
-  margin-left: 18px;
-  color: white;
-  font-weight: bolder;
-  
-}
+padding: 0;
+margin-left: 18px;
+color: white;
+font-weight: bolder;
 
+}
 a.navbar-brand {
-  color: white;
-  font-weight: 900;
-  font-size: xxx-large;
+color: white;
+font-weight: 900;
+font-size: xxx-large;
 }
-
 a.nav-link, h5.text-uppercase, p.email, h3.h3.text-center, label {
-  color: white;
-  font-weight: bolder;
-  font-weight: 900;
+color: white;
+font-weight: bolder;
+font-weight: 900;
 }
-
 footer{
-  margin-top: 5%;
-  border: 6px solid white;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-evenly;
+margin-top: 5%;
+border: 6px solid white;
+border-radius: 10px;
+display: flex;
+justify-content: space-evenly;
 }
-
 .home-title {
-  text-align: center;
-  color: white;
-  font-weight: bolder;
-  font-weight: 900;
-  font-style:oblique;
-  margin-top: 45px;
+text-align: center;
+color: white;
+font-weight: bolder;
+font-weight: 900;
+font-style:oblique;
+margin-top: 45px;
 }
-
 .description {
-  text-align: center;
-  color: white;
-  font-style: italic;
-  font-weight: lighter;
-  padding-left: 5px;
-  padding-right: 5px;
+text-align: center;
+color: white;
+font-style: italic;
+font-weight: lighter;
+padding-left: 5px;
+padding-right: 5px;
 }
-
 .hobbies-btn{
-  border: solid 5px;
-  border-radius: 10px;
-  border-color: rgb(228, 77, 77);
-  display: flex;
-  justify-content: center;
-  color: rgb(255, 247, 247);
-  margin-left: 40%;
-  margin-right: 40%;
-  font-weight: bolder;
-  font-size: larger;
+border: solid 5px;
+border-radius: 10px;
+border-color: rgb(228, 77, 77);
+display: flex;
+justify-content: center;
+color: rgb(255, 247, 247);
+margin-left: 40%;
+margin-right: 40%;
+font-weight: bolder;
+font-size: larger;
 }
 .email, .contact{
-  color: white;
+color: white;
+}
+img.d-block.w-100 {
+height: 450px;
 }
