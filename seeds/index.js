@@ -15,7 +15,7 @@ const seedAll = async () => {
   await seedHobbyBox();
   console.log('\n----- HOBBYBOX SEEDED -----\n');
 
-  await seedSubscriptions();
+  //await seedSubscriptions();
   console.log('\n----- SUBSCRIPTION SEEDED -----\n');
 
   process.exit(0);
