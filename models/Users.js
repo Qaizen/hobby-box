@@ -81,11 +81,11 @@ Users.init(
           }, // adding our database connection to our model... this is ES6 shorthand for sequelize: sequelize
           sequelize,
           // the purpose of timestamp is to automatically add the created_at and updated_at columns to the table
-          timestamp: false,
+          timestamps: false,
           // the purpose of the freezeTableName is to freeze the table name to the name of the model
           freezeTableName: true,
           // the purpose of the underscored is to make the table name lowercase and use underscores instead of camelCase
-          underscore: true,
+          underscored: true,
           // the purpose of the modelName is to change the name of the table to the name of the model
           modelName: "users",
         }
