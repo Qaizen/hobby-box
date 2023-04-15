@@ -70,14 +70,51 @@ border-color: rgb(228, 77, 77);
 display: flex;
 justify-content: center;
 color: rgb(255, 247, 247);
-margin-left: 40%;
-margin-right: 40%;
+margin-left: 45%;
+margin-right: 45%;
 font-weight: bolder;
 font-size: larger;
 }
+
+.hobbies-btn:hover{
+  color: lightskyblue;
+  transition: after .6s;
+}
+
 .email, .contact{
 color: white;
 }
+
+.email:hover{
+  color: rgb(106, 161, 244);
+  transition: after .4s;
+}
+
 img.d-block.w-100 {
 height: 450px;
+}
+
+.card-text{
+  font-size: 90%;
+}
+
+.sub{
+  border:solid 5px;
+  border-radius: 10px;
+  border-color: beige;
+}
+
+button{
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+button:hover{
+  background-color: rgb(75, 172, 245);
+  transition: after .4s;
+}
+
+summary:hover{
+  color: rgb(244, 205, 106);
+  transition: after .4s;
 }
