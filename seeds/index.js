@@ -3,6 +3,7 @@ const seedUsers = require('./users-seeds');
 const seedHobbyBox = require('./hobbyBox-seeds');
 
 const sequelize = require('../config/connection');
+const seedSubscriptions = require('./subscriptions-seeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -13,6 +14,9 @@ const seedAll = async () => {
 
   await seedHobbyBox();
   console.log('\n----- HOBBYBOX SEEDED -----\n');
+
+  await seedSubscriptions();
+  console.log('\n----- SUBSCRIPTION SEEDED -----\n');
 
   process.exit(0);
 };
