@@ -1,5 +1,5 @@
 
-const { Subscriptions } = require('../models');
+const { Subscription } = require('../models');
 
 const subscriptionsData = [
   {
@@ -36,6 +36,6 @@ const subscriptionsData = [
   // },
 ];
 
-const seedSubscriptions = () => Subscriptions.bulkCreate(subscriptionsData);
+const seedSubscriptions = () => Subscription.bulkCreate(subscriptionsData);
 
 module.exports = seedSubscriptions;
