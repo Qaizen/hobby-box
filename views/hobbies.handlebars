@@ -42,6 +42,24 @@
       <h5 class="card-title">Card title</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
-  </div>    
-  </body>
-  
+  </div>
+  <div>
+    {{#if hobbies.length}}
+    <div class="col-md-6 project-list">
+      <h3>Current Subscriptions:</h3>
+    
+      {{#each hobbies as |hobbyBox|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/hobbyBox/{{hobbyBox.id}}">{{project.name}}</a></h4>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div> 
+  <script src="./js/hobbies.js"></script>
+</body>

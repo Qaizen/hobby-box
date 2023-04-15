@@ -28,14 +28,23 @@ HobbyBox.init(
               isDecimal: true,
             },
           },
-          stock: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 10,
-            validate: {
-              isNumeric: true,
-            },
-        }
+        stock: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          defaultValue: 10,
+          validate: {
+            isNumeric: true,
+          },
+        },
+        
+        users_id: {
+          type: DataTypes.INTEGER,
+          references: {
+            model: 'Users',
+            key: 'id',
+          },
+        },
+         //can't get working
     },
     {
         sequelize,

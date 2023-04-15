@@ -47,7 +47,7 @@ router.post("/", (req, res) => {
     stock: req.body.stock,
   })
   .then((product) => {
-       if (req.body.usersIds.length) {
+      if (req.body.usersIds.length) {
       const subscriptionIdArr = req.body.usersIds.map((users_id) => {
         return {
           hobbybox_id: product.id,
@@ -66,66 +66,5 @@ router.post("/", (req, res) => {
     // });
 });
 
-// update product
-router.put("/:id", (req, res) => {
-  // update product data
-  HobbyBox.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((product) => {
-      // find all associated tags from ProductTag
-      return Subscriptions.findAll({ where: { subscriptions_id: req.params.id } });
-    })
-    .then((productTags) => {
-        // get list of current tag_ids
-        const subscriptionIds = productTags.map(({ users_id }) => users_id);
-        // create filtered list of new tag_ids
-        const newsubscription = req.body.usersIds
-          .filter((users_id) => !subscriptionIds.includes(users_id))
-          .map((users_id) => {
-            return {
-              subscription_id: req.params.id,
-              users_id,
-            };
-          });
-        // figure out which ones to remove
-        const subscriptionToRemove = productTags
-          .filter(({ users_id }) => !req.body.usersIds.includes(users_id))
-          .map(({ id }) => id);
-  
-        // run both actions
-        return Promise.all([
-          Subscription.destroy({ where: { id: subscriptionToRemove } }),
-          Subscription.bulkCreate(newsubscription),
-        ]);
-      })
-      .then((updatedProductTags) => res.json(updatedProductTags))
-      .catch((err) => {
-        // console.log(err);
-        res.status(400).json(err);
-      });
-  });
-
-  router.delete('/:id', (req, res) => {
-    // delete one product by its `id` value
-    HobbyBox.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    .then(dbProductData => {
-      if (!dbProductData) {
-        res.status(404).json({ message: 'No hobby box found with this id' });
-        return;
-      }
-      res.json(dbProductData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-  });
 
 module.exports = router;
