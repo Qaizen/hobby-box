@@ -19,7 +19,7 @@ HobbyBox.init(
         product_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            required: true,
+            //required: true,
         },
         price: {
             type: DataTypes.DECIMAL(10, 2),

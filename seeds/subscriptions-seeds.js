@@ -26,14 +26,14 @@ const subscriptionsData = [
     hobbybox_id: 3,
     users_id: 6,
   },
-  {
-    hobbybox_id: 3,
-    users_id: 7,
-  },
-  {
-    hobbybox_id: 3,
-    users_id: 8,
-  },
+  // {
+  //   hobbybox_id: 3,
+  //   users_id: 7,
+  // },
+  // {
+  //   hobbybox_id: 3,
+  //   users_id: 8,
+  // },
 ];
 
 const seedSubscriptions = () => Subscriptions.bulkCreate(subscriptionsData);

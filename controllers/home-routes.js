@@ -58,7 +58,7 @@ router.get('/hobbies', async (req, res) => {
   if(req.session.loggedIn) {
     try{
       // Find the logged in user based on the session ID
-      const userData = await Users.findByPk(req.session.user_id, {
+      const userData = await Users.findByPk(req.session.users_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: HobbyBox }],
       });

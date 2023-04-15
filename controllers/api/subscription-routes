@@ -11,14 +11,22 @@
 
 
 const router = require('express').Router();
-const { HobbyBox, Users, Subscription } = require('../../models');
+const { HobbyBox, Users, Subscriptions } = require('../../models');
 // const withAuth = require('../../utils/auth'); need authorization next
 
 
 // GET all Subscription
 router.get('/', (req, res) => {
     // find all Subscription
-    Subscription.findAll({
+    Subscriptions.findAll({
+        include: [
+            {
+                model: HobbyBox
+            },
+            {
+                model: Users
+            }
+        ]
     })
         .then(dbSubscriptionData => res.json(dbSubscriptionData))
         .catch(err => {
@@ -30,7 +38,7 @@ router.get('/', (req, res) => {
 // GET one subscription
 router.get('/:id', (req, res) => {
     // find a single subscription by its `id`
-    Subscription.findOne({
+    Subscriptions.findOne({
         where: {
             id: req.params.id
         },
@@ -52,7 +60,7 @@ router.get('/:id', (req, res) => {
 // POST new subscription
 router.post('/:id', (req, res) => {
     // create a new subscription
-    Subscription.create({
+    Subscriptions.create({
         // req.body means passing everything from frontend
         ...req.body,
         users_id: req.session.users
@@ -69,7 +77,7 @@ router.post('/:id', (req, res) => {
 // PUT update subscription
 router.put('/:id', (req, res) => {
     // update a subscription's name by its `id` value
-    Subscription.update(req.body, {
+    Subscriptions.update(req.body, {
         where: {
             users_id: req.session.users
         }
@@ -90,7 +98,7 @@ router.put('/:id', (req, res) => {
 // DELETE subscription by id
 router.delete('/:id', (req, res) => {
     // delete on subscription by its `id` value
-    Subscription.destroy({
+    Subscriptions.destroy({
         where: {
             id: req.params.id
         }
