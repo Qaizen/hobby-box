@@ -66,5 +66,46 @@ router.post("/", (req, res) => {
     // });
 });
 
+// update a product
+router.put("/:id", (req, res) => {
+  HobbyBox.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((product) => {
+      // find all associated tags from the ProductTag table
+      return Subscriptions.findAll({ where: { hobbybox_id: req.params.id } });
+    })
+    .then((subscriptions) => {
+      // get list of current tag_ids
+      const subscriptionIds = subscriptions.map(({ users_id }) => users_id);
+      // create filtered list of new tag_ids
+      const newSubscriptions = req.body.usersIds
+        .filter((users_id) => !subscriptionIds.includes(users_id))
+        .map((users_id) => {
+          return {
+            hobbybox_id: req.params.id,
+            users_id,
+          };
+        });
+      // figure out which ones to remove
+      const subscriptionsToRemove = subscriptions
+        .filter(({ users_id }) => !req.body.usersIds.includes(users_id))
+        .map(({ id }) => id);
+
+      // run both actions
+      return Promise.all([
+        Subscription.destroy({ where: { id: subscriptionsToRemove } }),
+        Subscription.bulkCreate(newSubscriptions),
+      ]);
+    })
+    .then((updatedSubscriptions) => res.json(updatedSubscriptions))
+    .catch((err) => {
+      // console.log(err);
+      res.status(400).json(err);
+    });
+});
+
 
 module.exports = router;
