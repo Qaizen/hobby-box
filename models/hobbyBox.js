@@ -37,13 +37,13 @@ HobbyBox.init(
           },
         },
         
-        users_id: {
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'Users',
-            key: 'id',
-          },
-        },
+        // users_id: {
+        //   type: DataTypes.INTEGER,
+        //   references: {
+        //     model: 'Users',
+        //     key: 'id',
+        //   },
+        // },
          //can't get working
     },
     {
