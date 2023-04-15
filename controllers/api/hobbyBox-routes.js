@@ -32,13 +32,47 @@ router.get("/:id", (req, res) => {
 });
 
 // create new product
+// router.post("/", (req, res) => {
+//   /* req.body should look like this...
+//     {
+//       product_name: "Basketball", 
+//       price: 200.00,
+//       stock: 3,
+      
+//     }
+//   */
+//   HobbyBox.create({
+//     product_name: req.body.product_name,
+//     price: req.body.price,
+//     stock: req.body.stock,
+//   })
+//   .then((product) => {
+//       if (req.body.usersIds.length) {
+//       const subscriptionIdArr = req.body.usersIds.map((users_id) => {
+//         return {
+//           hobbybox_id: product.id,
+//           users_id,
+//         };
+//       });
+//       return Subscription.bulkCreate(subscriptionIdArr);
+//     }
+//     // if no product tags, just respond
+//     res.status(200).json(product);
+//   })
+//     // .then((productTagIds) => res.status(200).json(productTagIds))
+//     // .catch((err) => {
+//     //   console.log(err);
+//     //   res.status(400).json(err);
+//     // });
+// });
+
 router.post("/", (req, res) => {
   /* req.body should look like this...
     {
       product_name: "Basketball", 
       price: 200.00,
       stock: 3,
-      
+      usersIds: [1, 2, 3] // optional
     }
   */
   HobbyBox.create({
@@ -46,25 +80,29 @@ router.post("/", (req, res) => {
     price: req.body.price,
     stock: req.body.stock,
   })
-  .then((product) => {
+    .then((product) => {
       if (req.body.usersIds.length) {
-      const subscriptionIdArr = req.body.usersIds.map((users_id) => {
-        return {
-          hobbybox_id: product.id,
-          users_id,
-        };
-      });
-      return Subscription.bulkCreate(subscriptionIdArr);
-    }
-    // if no product tags, just respond
-    res.status(200).json(product);
-  })
-    // .then((productTagIds) => res.status(200).json(productTagIds))
-    // .catch((err) => {
-    //   console.log(err);
-    //   res.status(400).json(err);
-    // });
+        const subscriptionIdArr = req.body.usersIds.map((users_id) => {
+          return {
+            hobbybox_id: product.id,
+            users_id,
+          };
+        });
+        return Subscription.bulkCreate(subscriptionIdArr);
+      } else {
+        return Promise.resolve();
+      }
+    })
+    .then(() => {
+      res.status(200).json({ message: "HobbyBox created successfully." });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
+
+
 
 // update a product
 router.put("/:id", (req, res) => {
@@ -104,6 +142,28 @@ router.put("/:id", (req, res) => {
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
+    });
+});
+
+
+// delete a product by id
+router.delete("/:id", (req, res) => {
+  HobbyBox.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedProduct) => {
+      if (deletedProduct === 0) {
+        return res.status(404).json({ message: "No product with this id." });
+      }
+      return res.status(200).json({
+        message: `Product with id ${req.params.id} has been deleted.`,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
