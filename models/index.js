@@ -1,7 +1,7 @@
 //import models
 const HobbyBox = require('./HobbyBox');
 const Users = require('./Users');
-const Subscription = require('./subscriptions');
+const Subscription = require('./subscription');
 
 //Users has many subscriptions
 // Users.hasMany(HobbyBox, {
@@ -30,20 +30,23 @@ const Subscription = require('./subscriptions');
 //   onDelete: 'CASCADE'
 // });
 
-// Users.hasMany(Subscription, {
-//   foreignKey: 'users_id'
-// });
+Users.hasMany(Subscription, {
+  foreignKey: 'user_id',
+  //as: 'userSub'
+});
 
-// Subscription.belongsTo(Users, {
-//   foreignKey: 'users_id'
-// });
+Subscription.belongsTo(Users, {
+  foreignKey: 'user_id',
+});
 
-// HobbyBox.hasMany(Subscription, {
-//   foreignKey: 'hobbybox_id'
-// });
-// Subscription.belongsTo(HobbyBox, {
-//   foreignKey: 'hobbybox_id'
-// });
+HobbyBox.hasMany(Subscription, {
+  foreignKey: 'hobby_box_id',
+  //as: 'hobbySub'
+});
+
+Subscription.belongsTo(HobbyBox, {
+  foreignKey: 'hobby_box_id',
+});
 
 Users.belongsToMany(HobbyBox, {
   through: Subscription,
@@ -51,10 +54,8 @@ Users.belongsToMany(HobbyBox, {
 
 HobbyBox.belongsToMany(Users, {
   through: Subscription,
-  
 })
 
-Subscription.belongsTo(Users);
-Subscription.belongsTo(HobbyBox);
+
 
 module.exports = { Users, HobbyBox, Subscription };

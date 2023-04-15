@@ -9,10 +9,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Subscriptions extends Model {}
+class Subscription extends Model {}
 
 // set up fields and rules for sub model
-Subscriptions.init(
+Subscription.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,21 +21,14 @@ Subscriptions.init(
       autoIncrement: true
     },
 
-    // activelySubbed: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false,
-    //   defaultValue: false,
-    // },
-
-
-    hobbybox_id: {
+    hobby_box_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'hobbyBox',
         key: 'id'
       }
     },
-    users_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
@@ -47,10 +40,11 @@ Subscriptions.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Subscriptions',
+    modelName: 'Subscription',
   }
 );
 
-module.exports = Subscriptions;
+module.exports = Subscription;

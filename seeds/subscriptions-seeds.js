@@ -3,28 +3,28 @@ const { Subscription } = require('../models');
 
 const subscriptionsData = [
   {
-    hobbybox_id: 1,
-    users_id: 1,
+    hobby_box_id: 1,
+    user_id: 1,
   },
   {
-    hobbybox_id: 1,
-    users_id: 2,
+    hobby_box_id: 2,
+    user_id: 2,
   },
   {
-    hobbybox_id: 1,
-    users_id: 3,
+    hobby_box_id: 3,
+    user_id: 3,
   },
   {
-    hobbybox_id: 2,
-    users_id: 4,
+    hobby_box_id: 4,
+    user_id: 4,
   },
   {
-    hobbybox_id: 3,
-    users_id: 5,
+    hobby_box_id: 5,
+    user_id: 5,
   },
   {
-    hobbybox_id: 3,
-    users_id: 6,
+    hobby_box_id: 6,
+    user_id: 6,
   },
   // {
   //   hobbybox_id: 3,

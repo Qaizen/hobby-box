@@ -56,26 +56,35 @@ router.get('/hobbies', (req, res) => {
 router.get('/hobbies', async (req, res) => {
   console.log('page but not IF yet\n\n')
   if(req.session.loggedIn) {
+    //console.log('after IF')
     try{
       // Find the logged in user based on the session ID
-      const userData = await Users.findByPk(req.session.users_id, {
+      const userData = await Users.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ model: HobbyBox }],
+        include: [
+          { 
+            model: HobbyBox,
+            attributes: ['id', 'product_name']
+          },
+        ],
       });
-      console.log(userData)
+      //console.log(userData)
       const user = userData.get({ plain: true });
-      console.log('before render\n\n')
+      //console.log('before render\n\n')
       console.log(user, '\n\n\n\n')
+      console.log(user.hobbyBoxes, '\n\n\n')
       res.render('hobbies', {
         ...user,
         loggedIn: req.session.loggedIn
       });
-      console.log(userData)
-      console.log('after render\n\n')
+      //console.log(userData)
+      //console.log('after render\n\n')
     }catch(err) {
+      console.log(err)
       res.render('login');
     }
   }else {
+    console.log('no session loggedIn')
     res.render('login');
   }
 });
