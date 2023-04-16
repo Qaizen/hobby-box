@@ -118,3 +118,8 @@ summary:hover{
   color: rgb(244, 205, 106);
   transition: after .4s;
 }
+
+#subscription-list, .sub-title {
+  color: white;
+
+}
