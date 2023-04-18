@@ -1,28 +1,28 @@
 const subscriptionButtons = document.querySelectorAll(".subscribe-btn");
 
-document.getElementById("music-subscribe").addEventListener("click", function() {
-    fetch(`/api/subscription/${id}`, {
-      method: "POST",
-      body: JSON.stringify({}),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error('Failed to subscribe :(');
-      }
-    })
-    .then(data => {
-      addSubscription(data.hobby);
-      document.location.replace('/');
-    })
-    .catch(error => {
-      alert(error.message);
-    });
-  });
+// document.getElementById("music-subscribe").addEventListener("click", function() {
+//     fetch(`/api/subscription/${id}`, {
+//       method: "POST",
+//       body: JSON.stringify({}),
+//       headers: {
+//         "Content-Type": "application/json"
+//       }
+//     })
+//     .then(response => {
+//       if (response.ok) {
+//         return response.json();
+//       } else {
+//         throw new Error('Failed to subscribe :(');
+//       }
+//     })
+//     .then(data => {
+//       addSubscription(data.hobby);
+//       document.location.replace('/');
+//     })
+//     .catch(error => {
+//       alert(error.message);
+//     });
+//   });
   
   // Define function to add a subscription to the list
   function addSubscription(hobby) {

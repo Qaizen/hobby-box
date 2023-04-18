@@ -1,8 +1,2 @@
-# hobby-box
+che
 
-
-bryson
-=======
-## John's change
-
-### Changed the ignore file
