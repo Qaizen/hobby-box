@@ -45,7 +45,7 @@ You can download “https://insomnia.rest/download” manipulate/test the data w
 
 ### [Github](https://github.com/Qaizen/hobby-box )
 
-## Screenshots
+## Screenshots for the project 
 
 ![Screenshot1](./public/images/s1.jpeg)
 ![Screenshot1](./public/images/s2.jpeg)
